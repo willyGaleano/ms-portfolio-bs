@@ -1,0 +1,47 @@
+basePath: /ms-portfolio-bs/v1
+host: localhost:3002
+info:
+  contact: {}
+  description: This is a simple API for managing portfolios
+  title: MS Portfolio BS API
+  version: "1.0"
+paths:
+  /portfolios/{id}:
+    get:
+      consumes:
+      - application/json
+      description: get portfolio by ID
+      parameters:
+      - description: Portfolio ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get portfolio by ID
+      tags:
+      - portfolio
+  /portfolios/seed:
+    post:
+      consumes:
+      - application/json
+      description: Seed data into MongoDB
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Seed data into MongoDB
+      tags:
+      - portfolio
+swagger: "2.0"

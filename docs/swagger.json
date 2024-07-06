@@ -1,0 +1,70 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a simple API for managing portfolios",
+        "title": "MS Portfolio BS API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:3002",
+    "basePath": "/ms-portfolio-bs/v1",
+    "paths": {
+        "/portfolios/seed": {
+            "post": {
+                "description": "Seed data into MongoDB",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "portfolio"
+                ],
+                "summary": "Seed data into MongoDB",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/portfolios/{id}": {
+            "get": {
+                "description": "get portfolio by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "portfolio"
+                ],
+                "summary": "Get portfolio by ID",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Portfolio ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
