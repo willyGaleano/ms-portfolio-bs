@@ -35,6 +35,8 @@
 - Seed
   ![seed](/etc/images/seed.png)
 
+  ![mongo_seed](/etc/images/mongo_seed.png)
+
 ## Construido con 🛠️
 
 - Go
